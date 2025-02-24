@@ -8,6 +8,25 @@ export default {
   theme: {
     extend: {
       colors: {
+        basic: {
+          50: '#FFFFFF',
+          100: '#F8F8F8',
+          200: '#ADB5BD',
+          300: '#666666',
+          500: '#404040',
+          600: '#000000',
+        },
+        green: {
+          50: '#2F6B5A',
+          100: '#1C5F4E',
+          200: '#06372B',
+        },
+        red: {
+          50: '#E80D0D',
+        },
+        yellow: {
+          50: '#F8DD01',
+        },
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
