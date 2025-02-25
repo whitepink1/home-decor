@@ -27,9 +27,10 @@ export default {
         yellow: {
           50: '#F8DD01',
         },
-        background: "var(--background)",
-        foreground: "var(--foreground)",
       },
+      backgroundImage: {
+        // 'main1': 'url("./main1.jpg")',
+      }
     },
   },
   plugins: [],
