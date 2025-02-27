@@ -1,14 +1,17 @@
 import Image from "next/image";
+import { getProduct } from "../_lib/data-service";
 
-export default function ProductCard({product}) {
-    const {id, created_at, name, type, color, material, price, description, discount, image } = product;
+export default async function PromoCard({onBottom, number}) {
+    const {id, name, type, price, discount, image } = await getProduct(number);
     
-    return(<div className={`flex flex-col justify-start items-center h-[450px] w-[305px] bg-basic-50`}>
+    return(<div className={`absolute ${onBottom ? 'bottom-0 right-[150px] z-10' : 'top-0 right-0 hover:z-40 hover:scale-[101%] hover:drop-shadow-lg'}`}>
+      <div className={`flex flex-col justify-start items-center h-[450px] w-[305px] bg-basic-50`}>
         <Image className="object-fill" height={360} width={305} src={image} alt={name} />
         <div className="flex flex-col justify-between items-center h-full">
             <h4 className="text-[20px] font-medium text-basic-600 mt-5">{name}</h4>
             <p className="text-[14px] text-basic-600/50">{type}</p>
             <p className="text-[16px] font-semibold text-green-200 mb-5">$ {price}</p>
         </div>
+      </div>
     </div>)
 }

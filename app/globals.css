@@ -2,4 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    font-family: 'Outfit';
+}
 
+#gridCategories {
+    grid-template: 
+    "a c c d" 
+    "a b e e";
+    ;
+}
+
+#categoriesFurniture {
+    grid-area: a;
+}
+#categoriesLightning {
+    grid-area: c;
+}
+#categoriesVases {
+    grid-area: d;
+}
+#categoriesDecor {
+    grid-area: b;
+}
+#categoriesAccessories {
+    grid-area: e
+}
