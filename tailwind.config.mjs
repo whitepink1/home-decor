@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+          basicFont: ['Outfit', "mono"],
+        },
       colors: {
         basic: {
           50: '#FFFFFF',
@@ -29,7 +32,11 @@ export default {
         },
       },
       backgroundImage: {
-        // 'main1': 'url("./main1.jpg")',
+        // 'catA': 'url("./public/cat_a.jpg")',
+        // 'catD': 'url("./public/cat_d.jpg")',
+        // 'catF': 'url("./public/cat_f.jpg")',
+        // 'catL': 'url("./public/cat_l.jpg")',
+        // 'catV': 'url("./public/cat_v.jpg")',
       }
     },
   },

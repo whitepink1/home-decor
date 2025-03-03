@@ -24,3 +24,15 @@ export const getProducts = async function(){
     }
     return data;
 }
+
+export const getReviews = async function(){
+    const {data, error} = await supabase
+    .from('reviews')
+    .select('*')
+    .order('id');
+
+    if(error) {
+        console.error(error);
+    }
+    return data;
+}

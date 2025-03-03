@@ -1,6 +1,12 @@
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
 import "./globals.css";
+import {Outfit} from 'next/font';
+
+const outfit = Outfit({
+  subsets: ['mono'],
+  weight: ['100','200','300','400','500','600',],
+})
 
 export const metadata = {
   title: {

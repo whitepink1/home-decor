@@ -5,9 +5,12 @@ import CompanyInfo from "./_components/CompanyInfo";
 import PopularProducts from "./_components/PopularProducts";
 import Testimonials from "./_components/Testimonials";
 import OurCategories from "./_components/OurCategories";
+import NewArrival from "./_components/NewArrival";
+import Sponsors from "./_components/Sponsors";
 
-export default async function Home() {
-  return (<main>
+export default function Home() {
+  return (<>
+    <main>
       <div className="h-[800px] pt-[143px] bg-[url('../public/main1.jpg')] bg-cover">
         <div className="flex justify-between h-[576px] mx-[312px] max-[1700px]:mx-[150px]">
         <div className="flex flex-col justify-between max-w-[60%] h-[372px] my-auto">
@@ -29,6 +32,8 @@ export default async function Home() {
       <CompanyInfo products={114}/>
       <PopularProducts/>
       <Testimonials />
+      <NewArrival />
+      <Sponsors />
     </main>
-  );
+    </>);
 }

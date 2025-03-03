@@ -10,10 +10,14 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@next/env": "^15.2.0",
+    "@next/font": "^14.2.15",
     "@supabase/supabase-js": "^2.49.1",
     "next": "15.1.7",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

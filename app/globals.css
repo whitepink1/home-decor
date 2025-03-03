@@ -2,15 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    font-family: 'Outfit';
-}
-
 #gridCategories {
     grid-template: 
     "a c c d" 
     "a b e e";
-    ;
 }
 
 #categoriesFurniture {
