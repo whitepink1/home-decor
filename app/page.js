@@ -17,7 +17,7 @@ export default function Home() {
           <h1 className="text-basic-50 font-bold text-[60px]">Where Classic Charm Meets Modern Flair</h1>
           <p className="text-basic-50 text-[16px] max-w-[650px]">Haven is a modern home decor store where style meets comfort. We offer carefully curated, high-quality pieces to transform any space into a cozy and elegant retreat.</p>
           <div className="block relative w-[600px]">
-            <input type="text" className="h-[60px] w-full placeholder:pl-[15px] placeholder:tracking-wide" placeholder="Search Product"/>
+            <input type="text" className="h-[60px] w-full pl-[15px] placeholder:tracking-wide" placeholder="Search Product"/>
             <button className="absolute h-[48px] w-[207px] top-[6px] right-[1%] bg-basic-600 text-basic-50 text-[20px] font-semibold">SEARCH <MagnifyingGlassIcon className="inline-block text-basic-50 h-[24px]"/></button>
           </div>
         </div>

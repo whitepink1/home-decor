@@ -1,12 +1,8 @@
+import {Outfit} from "next/font/google";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
 import "./globals.css";
-import {Outfit} from 'next/font';
-
-const outfit = Outfit({
-  subsets: ['mono'],
-  weight: ['100','200','300','400','500','600',],
-})
+import { ProductsProvider } from "./_lib/prContext";
 
 export const metadata = {
   title: {
@@ -16,13 +12,21 @@ export const metadata = {
   description: "Haven is a home decor store where every detail brings warmth and harmony to your space.",
 };
 
+const outfitFont = Outfit({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-outfit",
+})
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>
-        <Header />
-        {children}
-        <Footer />
+      <body className={`antialiased ${outfitFont.className}`}>
+        <ProductsProvider>
+          <Header />
+            {children}
+          <Footer />
+        </ProductsProvider>
       </body>
     </html>
   );

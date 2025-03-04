@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-          basicFont: ['Outfit', "mono"],
+          outfit: ["var(--font-outfit)"],
         },
       colors: {
         basic: {
@@ -31,13 +31,6 @@ export default {
           50: '#F8DD01',
         },
       },
-      backgroundImage: {
-        // 'catA': 'url("./public/cat_a.jpg")',
-        // 'catD': 'url("./public/cat_d.jpg")',
-        // 'catF': 'url("./public/cat_f.jpg")',
-        // 'catL': 'url("./public/cat_l.jpg")',
-        // 'catV': 'url("./public/cat_v.jpg")',
-      }
     },
   },
   plugins: [],
