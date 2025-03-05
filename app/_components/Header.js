@@ -5,7 +5,7 @@ import Search from "./Search";
 import ShoppingCartButton from "./ShoppingCartButton";
 
 export default function Header() {
-    return(<header className="absolute text-center h-[80px] w-full">
+    return(<header className="absolute text-center h-[80px] w-full bg-gradient-to-b from-basic-600/90 to-basic-50/0 ">
       <div className="flex justify-between items-center h-full mx-[312px]"> 
         <div className="flex justify-start px-1">
             <Logo />

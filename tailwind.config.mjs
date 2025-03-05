@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      spacing: { 
+          base: '312px',
+      },
       fontFamily: {
           outfit: ["var(--font-outfit)"],
         },
