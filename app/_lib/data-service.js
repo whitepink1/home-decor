@@ -36,3 +36,15 @@ export const getReviews = async function(){
     }
     return data;
 }
+
+export async function createRequest(newRequest) {
+    const { data, error } = await supabase
+      .from("contactUS")
+      .insert([newRequest]);
+  
+    if (error) {
+      console.error(error);
+      throw new Error("Request could not be send");
+    }
+    return data;
+  }
