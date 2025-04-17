@@ -1,7 +1,7 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 
 export default function GridPart({prop, children, quantity, url}) {
-    return(<div id={prop} className={`flex flex-col justify-end h-full w-full  ${url} bg-cover`}>
+    return(<div className={`flex flex-col justify-end h-full w-full  ${url} bg-cover ${prop}`}>
         <div className='flex justify-between mx-[24px] mb-[24px] '>
             <div>
                 <h4 className='text-basic-50 text-[20px] font-bold'>{children}</h4>

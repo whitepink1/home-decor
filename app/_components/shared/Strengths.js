@@ -1,5 +1,5 @@
 import { ChatBubbleLeftRightIcon, CreditCardIcon, TruckIcon } from "@heroicons/react/24/solid";
-import StrengthComponent from "./StrengthComponent";
+import StrengthComponent from "../StrengthComponent";
 import { ST } from "next/dist/shared/lib/utils";
 
 export default function Strengths() {

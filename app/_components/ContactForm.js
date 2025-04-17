@@ -3,13 +3,14 @@
 import { useState } from "react";
 import FormInput from "./FormInput";
 import {handleSubmit} from "./handleSubmit";
+import { toast } from 'react-toastify';
 
 export default function ContactForm() {
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
-
     const onSubmit = async (e) => {
         e.preventDefault();
+        toast("Wow so easy!");
         setLoading(true);
         setMessage("");
         const formData = new FormData(e.target);
@@ -23,7 +24,7 @@ export default function ContactForm() {
     }
 
     return(
-        <form onSubmit={onSubmit} method="POST" className="flex flex-col justify-between h-[625px] w-[625px] bg-green-100 p-[30px]">
+        <form onSubmit={onSubmit} method="POST" className="flex flex-col justify-between h-[625px] w-full min-[1400px]:w-[625px] bg-green-100 p-[30px]">
             <div>
                 <h5 className="text-[28px] font-semibold text-basic-50">Get in touch</h5>
                 <p className="text-[16px] text-basic-50/80">Have a question or need assistance? We’re here to help! Reach out to us for inquiries, design advice, or support—we’d love to hear from you.</p>

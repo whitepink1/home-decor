@@ -2,24 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
-#gridCategories {
-    grid-template: 
-    "a c c d" 
-    "a b e e";
-}
+.grid-layout {
+    display: grid;
+    gap: 24px;
+    height: 636px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  @media (min-width: 1350px) {
+    .grid-layout {
+      grid-template:
+        "a c c d"
+        "a b e e";
+    }
+  }
+  
+  @media (max-width: 1349px) {
+    .grid-layout {
+      grid-template:
+        "a c c"
+        "a e e"
+        "d d b";
+    }
+  }
 
-#categoriesFurniture {
+.categoriesFurniture {
     grid-area: a;
 }
-#categoriesLightning {
+.categoriesLightning {
     grid-area: c;
 }
-#categoriesVases {
+.categoriesVases {
     grid-area: d;
 }
-#categoriesDecor {
+.categoriesDecor {
     grid-area: b;
 }
-#categoriesAccessories {
+.categoriesAccessories {
     grid-area: e
+}
+
+.slider {
+  position: relative;
+}
+
+.track-slider,
+.range-slider,
+.slider-left-val,
+.slider-right-value{
+  position: absolute;
+}
+
+.track-slider,
+.range-slider {
+  border-radius: 4px;
+  height: 6px;
+}
+
+.track-slider {
+  width: 100%;
+  z-index: 1;
+}
+
+.range-slider {
+  z-index: 2;
+}
+
+.slider-left-value {
+  left: 6px;
+}
+
+.slider-right-value {
+  right: -4px;
+}
+
+.thumb,
+.thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.thumb {
+  pointer-events:none;
+  position: absolute;
+  height: 0;
+  outline: none;
+}
+
+.thumb-left {
+  z-index: 3;
+}
+.thumb-right {
+  z-index: 4;
+}
+
+.thumb::-webkit-slider-thumb {
+  background-color: #1C5F4E;
+  border-radius: 50%;
+  border: 1px solid #000;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin-top: 4.5px;
+  pointer-events: all;
+  position: relative;
+}
+.thumb::-moz-range-thumb {
+  background-color: #1C5F4E;
+  border-radius: 50%;
+  border: 1px solid #000;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin-top: 4.5px;
+  pointer-events: all;
+  position: relative;
 }

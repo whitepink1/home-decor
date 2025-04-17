@@ -10,7 +10,9 @@ export const ProductsProvider = ({children}) => {
     const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
+        console.log("useEffect is running...");
         const updatedFavourites = JSON.parse(localStorage.getItem("favourite")) || [];
+        console.log("Updated Favourites:", updatedFavourites);
         setFavourites(updatedFavourites);
         setIsClient(true);
     }, [])

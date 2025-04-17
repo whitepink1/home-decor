@@ -3,6 +3,8 @@ import Header from "./_components/Header";
 import Footer from "./_components/Footer";
 import "./globals.css";
 import { ProductsProvider } from "./_lib/prContext";
+import { ToastContainer } from 'react-toastify';
+import ScrollButton from "./_components/ScrollButton/ScrollButton";
 
 export const metadata = {
   title: {
@@ -23,9 +25,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`antialiased ${outfitFont.className}`}>
         <ProductsProvider>
+          <ToastContainer />
           <Header />
             {children}
           <Footer />
+          <ScrollButton />
         </ProductsProvider>
       </body>
     </html>
