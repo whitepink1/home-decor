@@ -10,6 +10,6 @@ export const filterCategories = {
     PriceValue: ["Under50", "50-100", "100-200", "200-300", "300-450", "Over450"],
     Price: ["Under $50","$50 - $100","$100 - $200","$200 - $300","$300 - $450","Over $450"],
     Categories: ["Furniture","Lighting","Decor","Vases","Accessories","Sale"],
-    Color: ["White","Black","Grey","Brown","Beige","Gold","Burgundy"],
-    Material: ["Leather","Marble","Metal","Wood","Glass","Cotton","Plastic","Stone"],
+    Color: ["Beige","Black","Brown","Burgundy","Gold","Green","Grey","White"],
+    Material: ["Cotton","Glass","Leather","Marble","Metal","Plastic","Stone","Wood"],
 }

@@ -1,5 +1,6 @@
 import { getShopProducts } from "@/app/_lib/data-service";
 import ProductCard from "../ProductCard";
+import Pagination from "./Pagination";
 
 const ShopCatalogueResult = async ({ searchParams }) => {
     const page = Number(searchParams.page) || 1;
@@ -30,6 +31,7 @@ const ShopCatalogueResult = async ({ searchParams }) => {
             :
             <div className="text-center">No Results</div>}
         </div>
+        <Pagination page={page} total={total} resultPageQuantity={resultPageQuantity} isPage={isPage} isResult={products.length}/>
     </div>)
 }
 

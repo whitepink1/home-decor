@@ -22,6 +22,7 @@ export const getShopProducts = async ({page = 1, price, category, color, materia
     const filterCategory = category && category != 'sale' ? category?.split(',').map((word) => word.charAt(0).toUpperCase() + word.slice(1)) : filterCategories.Categories;
     const filterMaterial = material?.split(',') || filterCategories.Material.map(m => m.toLowerCase());
     const isOnSale = category?.split(',').includes('sale') || category === 'sale';
+    const isCheckboxPrice = price?.includes("-") || price?.includes("under") || price?.includes("over");
     let priceRangeResults = [];
     let priceRangeCounts = 0;
     let query = supabase
@@ -32,21 +33,9 @@ export const getShopProducts = async ({page = 1, price, category, color, materia
     .in('color', filterColor)
     .in('material', filterMaterial);
 
-    // if (category && category != 'sale') {
-    //     let filterCategory = category?.split(',').map((word) => word.charAt(0).toUpperCase() + word.slice(1));
-    //     query = query.in('type', filterCategory);
-    // }
     if (category?.split(',').includes('sale') || category === 'sale') {
         query = query.not('discount', 'is', null);
     }
-    // if (color) {
-    //     let filterColor = color?.split(',');
-    //     query = query.in('color', filterColor);
-    // }
-    // if (material) {
-    //     let filterMaterial = material?.split(',');
-    //     query = query.in('material', filterMaterial);
-    // }
 
     const fetchProductsByRange = async (min, max) => {
         const { data, error, count } = isOnSale ?
@@ -98,13 +87,13 @@ export const getShopProducts = async ({page = 1, price, category, color, materia
             const {productsItems, total} = await getFilteredProducts();
             priceRangeResults = productsItems;
             priceRangeCounts = total;
-            console.log(priceRangeResults);
-            console.log(priceRangeCounts);
+            console.log('Results with "-" Price: ', priceRangeResults);
+            console.log('Count with "-" Price: ', priceRangeCounts);
             }
-        }
-
+    }
+    
     const { count } = await query;
-    console.log('Cont: ', count)
+    console.log('Count: ', count)
 
     if(count < resultPageQuantity) {
         query = query.range(0, count + 1);
@@ -119,9 +108,10 @@ export const getShopProducts = async ({page = 1, price, category, color, materia
     if(error) {
         console.error(error);
     }
-    return {products: price?.includes("-") ? priceRangeResults : data ? data : [] ,
-            total: price?.includes("-") ? priceRangeCounts : count ? count : 0 ,
-            resultPageQuantity, isPage: price?.includes("-")};
+
+    return {products: isCheckboxPrice ? priceRangeResults : data ? data : [] ,
+            total: isCheckboxPrice ? priceRangeCounts : count ? count : 0 ,
+            resultPageQuantity, isPage: isCheckboxPrice};
 }
 export const getReviews = async function(){
     const {data, error} = await supabase
