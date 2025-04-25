@@ -57,7 +57,9 @@ export default function Footer() {
             </div>
         </div>
         <div className="flex justify-around max-w-[1000px] min-[1050px]:justify-between mx-auto min-[1400px]:max-w-[1300px] mt-[60px]">
-            <p className="text-basic-600/60">© Copyright Decor 2023. Design by Figma.guru</p>
+            <p className="text-basic-600/60">© Copyright Decor 2023. 
+                <Link className="text-sky-700 underline underline-offset-2" href="https://www.figma.com/@figmaguru"> Design by Figma.guru</Link>
+            </p>
             <Image src={PaymentIcons} alt='Payment Icons' className="max-[650px]:hidden"/>
         </div>
     </footer>)

@@ -28,7 +28,18 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`antialiased ${outfitFont.className}`}>
         <ProductsProvider>
-          <ToastContainer />
+        <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            />
           <Header />
             {children}
           <Footer />

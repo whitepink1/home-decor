@@ -130,5 +130,5 @@ export async function createRequest(newRequest) {
       console.error(error);
       throw new Error("Request could not be send");
     }
-    return data;
+    return {data, error};
 }
