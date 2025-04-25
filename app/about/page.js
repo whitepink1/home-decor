@@ -28,14 +28,14 @@ export const metadata = {
         <div  className="flex flex-col h-fit justify-between items-center">
           <div className="h-auto w-full flex justify-center gap-x-[70px] mt-[60px] max-w-[1300px]">
             <Image className="w-[35vw] max-w-[600px] h-auto opacity-95 object-cover aspect-video max-[1350px]:hidden" src={about1} alt="Home decor About  page" />
-            <div className="flex flex-col justify-between h-[350px] w-[65vw] max-w-[700px] min-[1350px]:w-[35vw] min-[1350px]:max-w-[600px] my-auto">
+            <div className="flex flex-col justify-between h-fit w-[65vw] gap-[25px] max-w-[700px] min-[1350px]:w-[35vw] min-[1350px]:max-w-[600px] min-[700px]:h-[350px] my-auto">
               <h3 className="text-[40px] font-semibold">Exquisite Home Decor for Discerning Connoisseurs</h3>
               <p className="text-[16px]">At Haven, we curate a collection of sophisticated home decor pieces designed for those who appreciate the finer things in life. Every item embodies elegance, craftsmanship, and timeless style, transforming your space into a true reflection of luxury and refinement.</p>
               <button className="uppercase h-[50px] w-[205px] bg-basic-600 text-basic-50 text-[20px] font-semibold">learn more</button>
             </div>
           </div>
           <div className="h-auto w-full flex justify-center gap-x-[70px] my-[60px]">
-            <div className="flex flex-col justify-between items-start h-[350px] w-[65vw] max-w-[700px] min-[1350px]:w-[35vw] min-[1350px]:max-w-[600px] my-auto">
+            <div className="flex flex-col justify-between items-start h-fits w-[65vw] gap-[25px] max-w-[700px] min-[1350px]:w-[35vw] min-[1350px]:max-w-[600px] min-[700px]:h-[350px] my-auto">
               <h3 className="text-[40px] font-semibold">Discover the Art of Living</h3>
               <p className="text-[16px]">At Haven, we believe that home is more than just a place—it’s a reflection of your personality, style, and comfort.</p>
               <ul className="list-disc pl-5">

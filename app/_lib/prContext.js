@@ -28,8 +28,15 @@ export const ProductsProvider = ({children}) => {
         localStorage.setItem("favourite", JSON.stringify(updatedFavourites));
     };
 
+    const removeFavourites = (id) => {
+        if (!id) return;
+        const updatedFavourites = favourites.filter((num) => num != id);
+        setFavourites(updatedFavourites);
+        localStorage.setItem("favourite", JSON.stringify(updatedFavourites));
+    }
+
     return (
-        <ProductsContext.Provider value={{favourites, addFavourites, isClient}}>
+        <ProductsContext.Provider value={{favourites, addFavourites, isClient, removeFavourites}}>
             {children}
         </ProductsContext.Provider>
     )

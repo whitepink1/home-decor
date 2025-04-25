@@ -4,6 +4,8 @@ import Logo from "./Logo";
 import MainLink from "./MainLink";
 import Search from "./Search";
 import ShoppingCartButton from "./ShoppingCartButton";
+import ModalMenu from "./ModalMenu";
+import { Bars3Icon } from "@heroicons/react/24/solid";
 
 export default function Header() {
     return(<header className="absolute text-center h-[80px] w-full bg-gradient-to-b from-basic-600/90 to-basic-50/0">
@@ -23,8 +25,8 @@ export default function Header() {
             <Favourite />
             <ShoppingCartButton />
         </div>
-        <div className="min-[800px]:hidden text-basic-50">
-          Ham
+        <div className="min-[800px]:hidden relative">
+            <ModalMenu />
         </div>
       </div>   
     </header>)

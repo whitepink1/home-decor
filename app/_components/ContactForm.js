@@ -10,7 +10,6 @@ export default function ContactForm() {
     const [message, setMessage] = useState("");
     const onSubmit = async (e) => {
         e.preventDefault();
-        toast("Wow so easy!");
         setLoading(true);
         setMessage("");
         const formData = new FormData(e.target);
@@ -19,7 +18,7 @@ export default function ContactForm() {
         setLoading(false);
         setMessage(responseMessage);
         if (success) {
-            //setFormData({ fullName: "", email: "", subject: "", description: "" });
+            toast("Your message was successfully sent!");
         }
     }
 

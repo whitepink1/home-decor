@@ -18,17 +18,31 @@ function useSearchFilterParams(searchTag) {
         return;
     }
 
-    function updateRoute(item) {
+    function updateRoute(item, totalPages ) {
         let updatedValues;
 
-        if(typeof item != 'string') {
+        if(searchTag === 'order') {
+            newParams.delete(searchTag);
+            updatedValues = ['name', 'price', 'created_at'].includes(item) ? item : 'name';
+            newParams.set(searchTag, updatedValues);
+            router.replace(`/shop?${newParams.toString()}`, { scroll: false });
+            return;
+        }
+
+        if(searchTag === 'page') {
+            newParams.delete(searchTag);
+            updatedValues = totalPages < item || item < 1 ? '1' : `${item}`;
+            newParams.set(searchTag, updatedValues);
+            router.replace(`/shop?${newParams.toString()}`, { scroll: false });
+            return;
+        }
+        if(typeof item != 'string' && searchTag != 'page') {
             newParams.delete(searchTag);
             updatedValues = `${item.min}_${item.max}`
             newParams.set(searchTag, updatedValues);
             router.replace(`/shop?${newParams.toString()}`, { scroll: false });
             return;
         }
-
         if(typeof item === 'string' && resultRaw?.includes('_')){
             newParams.delete(searchTag);
             updatedValues = item.toLowerCase();

@@ -18,7 +18,7 @@ export default function OurTeam() {
             <MainPageHeader>Our Team</MainPageHeader>
             <MainPagePar>At Haven, our team is a group of passionate designers, craftsmen, and home decor enthusiasts dedicated to bringing beauty and functionality into every space. With a shared love for timeless design and quality craftsmanship, we work together to curate a collection that transforms houses into homes.</MainPagePar>
         </div>
-        <div className="flex w-full gap-5 justify-center flex-wrap max-[1900px]:mt-[50px]">
+        <div className="grid grid-cols-2 gap-[25px] mx-auto mt-[60px] min-[1400px]:grid-cols-4">
             {team.map((member) => <TeamMember key={member.name} name={member.name} position={member.position} url={member.url}/>)}
         </div>
     </div>)

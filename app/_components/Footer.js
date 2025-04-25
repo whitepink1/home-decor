@@ -10,12 +10,12 @@ import Link from "next/link";
 
 export default function Footer() {
     const itemShop1 = [
-        {name: "Furniture", url: "/"},
-        {name: "Vases", url: "/"},
-        {name: "Lightning", url: "/"},
-        {name: "Sale", url: "/"},
-        {name: "Decor", url: "/"},
-        {name: "Accessories", url: "/"},
+        {name: "Furniture", url: "/shop?category=furniture"},
+        {name: "Vases", url: "/shop?category=vases"},
+        {name: "Lightning", url: "/shop?category=lighting"},
+        {name: "Sale", url: "/shop?category=sale"},
+        {name: "Decor", url: "/shop?category=decor"},
+        {name: "Accessories", url: "/shop?category=accessories"},
     ];
     const itemShop2 = [
         {name: "Home", url: "/"},
@@ -26,14 +26,14 @@ export default function Footer() {
         {name: "Contact", url: "/contact"},
     ]
 
-    return(<footer className="h-[415px]">
-        <div className="flex justify-between mx-[50px] min-[1200px]:mx-[150px] min-[1500px]:mx-[312px] pt-[80px]">
-            <div className="flex flex-col justify-between h-[200px]">
+    return(<footer className="h-fit">
+        <div className="flex justify-around max-w-[1000px] gap-[10px] min-[1050px]:justify-between mx-auto min-[1400px]:max-w-[1300px]">
+            <div className="flex flex-col justify-between h-fit">
                 <Link href="/" className="flex h-[42px] items-center">
                     <Logo black={true}/>
                     <p className="text-[16px] px-2 text-basic-600">Haven</p>
                 </Link>
-                <p className="font-[16px] text-basic-600/50 w-[250px]">Haven is your destination for stylish and high-quality home decor. We offer a carefully curated selection to help you create a beautiful and inviting space.</p>
+                <p className="font-[16px] text-basic-600/50 max-w-[250px] mb-[15px]">Haven is your destination for stylish and high-quality home decor. We offer a carefully curated selection to help you create a beautiful and inviting space.</p>
                 <div className="flex justify-start gap-x-2">
                     <Image className="hover:cursor-pointer hover:scale-[103%]" src={facebook} alt="Facebook logo" />
                     <Image className="hover:cursor-pointer hover:scale-[103%]" src={x} alt="X logo" />
@@ -41,7 +41,7 @@ export default function Footer() {
                     <Image className="hover:cursor-pointer hover:scale-[103%]" src={youtube} alt="Youtube logo" />
                 </div>
             </div>
-            <FooterNavigation listOfItems={itemShop1}>Shop</FooterNavigation>
+            <FooterNavigation listOfItems={itemShop1} addClass="max-[800px]:hidden">Shop</FooterNavigation>
             <FooterNavigation listOfItems={itemShop2}>Useful Links</FooterNavigation>
             <div className="flex flex-col justify-between">
                 <div>
@@ -56,9 +56,9 @@ export default function Footer() {
                 </div>
             </div>
         </div>
-        <div className="flex justify-between pt-[64px] mx-auto min-[1200px]:mx-[150px] min-[1500px]:mx-[312px]">
+        <div className="flex justify-around max-w-[1000px] min-[1050px]:justify-between mx-auto min-[1400px]:max-w-[1300px] mt-[60px]">
             <p className="text-basic-600/60">© Copyright Decor 2023. Design by Figma.guru</p>
-            <Image src={PaymentIcons} alt='Payment Icons' />
+            <Image src={PaymentIcons} alt='Payment Icons' className="max-[650px]:hidden"/>
         </div>
     </footer>)
 }

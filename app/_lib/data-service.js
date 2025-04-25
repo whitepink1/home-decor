@@ -28,7 +28,7 @@ export const getShopProducts = async ({page = 1, price, category, color, materia
     let query = supabase
     .from('products')
     .select('*', { count: 'exact' })
-    .order(order)
+    .order(['name', 'price', 'created_at'].includes(order) ? order : 'name')
     .in('type', filterCategory)
     .in('color', filterColor)
     .in('material', filterMaterial);
@@ -87,13 +87,10 @@ export const getShopProducts = async ({page = 1, price, category, color, materia
             const {productsItems, total} = await getFilteredProducts();
             priceRangeResults = productsItems;
             priceRangeCounts = total;
-            console.log('Results with "-" Price: ', priceRangeResults);
-            console.log('Count with "-" Price: ', priceRangeCounts);
             }
     }
     
     const { count } = await query;
-    console.log('Count: ', count)
 
     if(count < resultPageQuantity) {
         query = query.range(0, count + 1);
