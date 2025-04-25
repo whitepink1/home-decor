@@ -2,7 +2,7 @@ import Image from "next/image";
 import socials from "../../public/socials.png";
 
 export default function TeamMember({url, name, position}) {
-    return(<div className="h-[415px] w-[33%] min-[1900px]:w-[300px] flex flex-col justify-between items-center">
+    return(<div className="h-[415px] flex flex-col justify-between items-center">
         <Image width="300" height="300" src={url} alt={name}/>
         <div className="flex flex-col justify-between items-center h-[100px]">
             <div className="text-center">

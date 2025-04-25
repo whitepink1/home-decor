@@ -8,8 +8,8 @@ import image5 from "../../../public/sp5.png";
 import { toast } from 'react-toastify';
 
 export default function Sponsors() {
-    return(<div className="h-[240px] bg-green-100">
-        <div className="flex justify-between items-center mx-auto min-[1300px]:mx-[150px] min-[1500px]:mx-[312px] h-full px-5">
+    return(<div className="h-[240px] bg-green-100 mb-[60px]">
+        <div className="flex justify-between items-center max-w-[1300px] mx-auto h-full px-[10px]">
             <Image className="h-fit" width={0} height={0} src={image1} alt="Interiors"/>
             <Image className="h-fit" width={0} height={0} src={image2} alt="Mininal"/>
             <Image className="h-fit" width={0} height={0} src={image3} alt="Modern House"/>

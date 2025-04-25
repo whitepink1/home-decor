@@ -7,19 +7,15 @@ import { toast } from 'react-toastify';
 
 export default function ContactForm() {
     const [loading, setLoading] = useState(false);
-    const [message, setMessage] = useState("");
     const onSubmit = async (e) => {
         e.preventDefault();
-        toast("Wow so easy!");
         setLoading(true);
-        setMessage("");
         const formData = new FormData(e.target);
         const payload = Object.fromEntries(formData);
-        const { success, message: responseMessage } = await handleSubmit(payload);  
+        const {data, error } = await handleSubmit(payload);  
         setLoading(false);
-        setMessage(responseMessage);
-        if (success) {
-            //setFormData({ fullName: "", email: "", subject: "", description: "" });
+        if (!error) {
+            toast.success('🦄 Your message was successfully sent!');
         }
     }
 

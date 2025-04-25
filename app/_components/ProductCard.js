@@ -1,9 +1,8 @@
-"use client";
 import Image from "next/image";
 import FavouriteButton from "./FavouriteButton";
 
 export default function ProductCard({product}) {
-    const {id, created_at, name, type, color, material, price, description, discount, image } = product;
+    const {id, name, type, price, discount, image } = product;
     
     return(<div className={`relative flex flex-col justify-start items-center h-[450px] w-[305px] bg-basic-50`}>
         <Image className="object-fill" height={360} width={305} src={image} alt={name} />
