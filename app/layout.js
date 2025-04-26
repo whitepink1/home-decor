@@ -12,9 +12,9 @@ export const metadata = {
     default: "Welcome / The Haven"
   },
   description: "Haven is a home decor store where every detail brings warmth and harmony to your space.",
-  keyword: "Home Decor, Home decor furniture, Home decor shop",
+  keywords: ["Home Decor", "Home decor furniture", "Home decor shop"],
   openGraph: {
-    images: '/m.jpg',
+    images: 'https://myvwmwqbvvnhhlmreilo.supabase.co/storage/v1/object/sign/Images/m.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJJbWFnZXMvbS5qcGciLCJpYXQiOjE3NDU2NzMzMTcsImV4cCI6MTc3NzIwOTMxN30.CwrlinBq2xWiqZQ5a6TIIBrrZ5wq_yPEWi0CLo5FYL4',
   },
 };
 
