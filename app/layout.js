@@ -12,9 +12,10 @@ export const metadata = {
     default: "Welcome / The Haven"
   },
   description: "Haven is a home decor store where every detail brings warmth and harmony to your space.",
-  icons: {
-    icon: '../public/m.jpg',
-  }
+  keyword: "Home Decor, Home decor furniture, Home decor shop",
+  openGraph: {
+    images: '/m.jpg',
+  },
 };
 
 const outfitFont = Outfit({
@@ -26,6 +27,7 @@ const outfitFont = Outfit({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <link rel="icon" href="https://myvwmwqbvvnhhlmreilo.supabase.co/storage/v1/object/sign/Images/favourite.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJJbWFnZXMvZmF2b3VyaXRlLnBuZyIsImlhdCI6MTc0NTY3MTY5OCwiZXhwIjoxNzc3MjA3Njk4fQ.5axBFQXwx7ot4Y8q2A6CEahlOJ8HIUnjgjLOYLbmMJA"/>
       <body className={`antialiased ${outfitFont.className}`}>
         <ProductsProvider>
         <ToastContainer

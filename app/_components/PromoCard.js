@@ -5,7 +5,7 @@ import FavouriteButton from "./FavouriteButton";
 export default async function PromoCard({onBottom, number}) {
     const {id, name, type, price, discount, image } = await getProduct(number);
     
-    return(<div className={`absolute hover:drop-shadow-lg hover:scale-[101%] ${onBottom ? 'bottom-0 right-[150px] z-10' : 'top-0 right-0 hover:z-20 '}`}>
+    return(<div className={`absolute drop-shadow-md hover:drop-shadow-lg hover:scale-[101%] ${onBottom ? 'bottom-0 right-[150px] z-10' : 'top-0 right-0 hover:z-20 '}`}>
       <div className={`flex flex-col justify-start items-center h-[450px] w-[305px] bg-basic-50`}>
         <Image className="object-fill" height={360} width={305} src={image} alt={name} />
         {discount ? <p className="absolute h-[28px] w-[80px] top-[20px] left-[20px] text-center text-[16px] leading-[28px] font-bold text-basic-50 bg-red-50">-{discount}%</p> : ""}
