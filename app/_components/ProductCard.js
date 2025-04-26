@@ -1,11 +1,15 @@
+"use client";
 import Image from "next/image";
 import FavouriteButton from "./FavouriteButton";
+import { useState } from "react";
 
 export default function ProductCard({product}) {
-    const {id, name, type, price, discount, image } = product;
+    const {id, name, type, price, discount, image } = product || {};
+    const [isLoading, setIsLoading] = useState(true);
+
     
     return(<div className={`relative flex flex-col justify-start items-center h-[450px] w-[305px] bg-basic-50`}>
-        <Image className="object-fill" height={360} width={305} src={image} alt={name} />
+        <Image className={`object-fill ${isLoading ? "blur-sm" : "blur-0"}`} height={360} width={305} src={image} alt={name} onLoad={() => setIsLoading(false)}/>
         {discount ? <p className="absolute h-[28px] w-[80px] top-[20px] left-[20px] text-center text-[16px] leading-[28px] font-bold text-basic-50 bg-red-50">-{discount}%</p> : ""}
         <FavouriteButton id={id}/>
         <div className="flex flex-col justify-between items-center text-center h-full">
