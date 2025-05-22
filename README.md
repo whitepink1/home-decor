@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛋️ HavenDecor – Home Decor Online Store
 
-## Getting Started
+HavenDecor is a modern and elegant interior shop website built using **Next.js**, **Tailwind CSS**, and **Supabase**. It allows users to explore a catalog of home decor items with features like filtering, pagination, and a favorites system (via `localStorage`). It also includes a contact form that stores messages directly to the Supabase database.
 
-First, run the development server:
+> ⚠️ Note: The layout is only partially responsive. It works up to a tablet width of ~1024px. Some design issues may appear on smaller screens.
+
+---
+
+## ✨ Features
+
+- 🏠 Beautiful landing page with curated product displays
+- 🛒 Dynamic product catalog powered by Supabase
+- 🔍 Filtering and price sorting
+- 📦 Pagination for large product lists
+- ❤️ Add to Favorites (stored in browser `localStorage`)
+- 📨 Contact form (writes to Supabase table)
+- 💡 Reusable UI components
+- 💻 Built with Next.js App Router
+
+---
+
+## 📷 Screenshots
+
+![Homepage Section](./public/homepage.jpg)
+![Shop Section](./public/shop.jpg)
+![Contact Section](./public/contact.jpg)
+
+---
+
+## 🚀 Tech Stack
+
+- **Next.js 13 (App Router)**
+- **React**
+- **Tailwind CSS**
+- **Supabase (as backend database)**
+- **localStorage** (for favorites)
+- **Custom filtering & pagination logic**
+
+---
+
+## 🧱 Folder Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+📂 app
+ ├── 📂components
+ ├── 📂_lib
+ ├── 📂_styles
+ ├── 📂about
+ ├── 📂constants
+ ├── 📂contact
+ ├── 📂utils
+ └── 📂shop
+📂 public 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🛠️ Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Clone the repository
+git clone https://github.com/whitepink1/home-decor.git
 
-## Learn More
+# Navigate into the project directory
+cd home-decor
 
-To learn more about Next.js, take a look at the following resources:
+# Install dependencies
+npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Set up environment variables for Supabase
+cp .env.example .env.local
+# (Fill in your Supabase URL and anon key)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Run the development server
+npm run dev
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔮 Roadmap / Limitations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+● ❌ No detailed product page (wasn't included in the design)
+
+● ❌ No authentication system
+
+● 📱 Limited responsiveness (tablet only)
+
+● ✅ Potential to add admin dashboard & auth in the future
+
+---
+
+## 🧑‍🎨 Design Credits
+
+Designed by [Figma Guru](https://www.figma.com/community/file/1367077018040074328/decor-figma-template) (Figma community resource)
+
+---
+
+## 📄 License
+This project is for educational and portfolio purposes. Not intended for commercial use.
