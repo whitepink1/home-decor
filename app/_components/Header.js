@@ -8,7 +8,7 @@ import ModalMenu from "./ModalMenu";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 
 export default function Header() {
-    return(<header className="absolute text-center h-[80px] w-full bg-gradient-to-b from-basic-600/90 to-basic-50/0">
+    return(<header className="z-50 absolute text-center h-[80px] w-full bg-gradient-to-b from-basic-600/90 to-basic-50/0">
       <div className="flex justify-between items-center h-full mx-[25px] min-[1125px]:mx-[100px] min-[1600px]:mx-[312px]"> 
         <Link href="/" className="flex justify-start px-1">
             <Logo />
