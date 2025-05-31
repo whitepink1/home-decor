@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@next/third-parties/google';
 import {Outfit} from "next/font/google";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
@@ -47,6 +48,7 @@ export default function RootLayout({ children }) {
           <Footer />
           <ScrollButton />
         </ProductsProvider>
+        <GoogleAnalytics gaId="G-4JJG5ZR5D5"/>
       </body>
     </html>
   );
