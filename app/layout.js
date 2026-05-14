@@ -15,7 +15,7 @@ export const metadata = {
   description: "Haven is a home decor store where every detail brings warmth and harmony to your space.",
   keywords: ["Home Decor", "Home decor furniture", "Home decor shop"],
   openGraph: {
-    images: 'https://myvwmwqbvvnhhlmreilo.supabase.co/storage/v1/object/sign/Images/m.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJJbWFnZXMvbS5qcGciLCJpYXQiOjE3NDU2NzMzMTcsImV4cCI6MTc3NzIwOTMxN30.CwrlinBq2xWiqZQ5a6TIIBrrZ5wq_yPEWi0CLo5FYL4',
+    images: 'https://myvwmwqbvvnhhlmreilo.supabase.co/storage/v1/object/sign/Images/m.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZmZmODY5NS1mNDFjLTQ0ODMtYmRiYS1hNzhlOGRjNDM0YTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvbS5qcGciLCJpYXQiOjE3Nzg3NDkwMzMsImV4cCI6MTgxMDI4NTAzM30.rYcyyCmP7tVWF5JX2PCLGxiGvEQfMSjzlo45p1bhxx0',
   },
 };
 
@@ -28,7 +28,7 @@ const outfitFont = Outfit({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <link rel="icon" href="https://myvwmwqbvvnhhlmreilo.supabase.co/storage/v1/object/sign/Images/favourite.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJJbWFnZXMvZmF2b3VyaXRlLnBuZyIsImlhdCI6MTc0NTY3MTY5OCwiZXhwIjoxNzc3MjA3Njk4fQ.5axBFQXwx7ot4Y8q2A6CEahlOJ8HIUnjgjLOYLbmMJA"/>
+      <link rel="icon" href="https://myvwmwqbvvnhhlmreilo.supabase.co/storage/v1/object/sign/Images/favourite.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZmZmODY5NS1mNDFjLTQ0ODMtYmRiYS1hNzhlOGRjNDM0YTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZXMvZmF2b3VyaXRlLnBuZyIsImlhdCI6MTc3ODc0OTAxMiwiZXhwIjoxODEwMjg1MDEyfQ.s2BAOxOmknzx3Lnn9qkZF5Xlzrb5g2PIn-ajVXBU0IQ"/>
       <body className={`antialiased ${outfitFont.className}`}>
         <ProductsProvider>
         <ToastContainer
