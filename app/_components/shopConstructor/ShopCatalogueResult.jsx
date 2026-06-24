@@ -4,7 +4,8 @@ import Pagination from "./Pagination";
 import OrderFilter from "./OrderFilter";
 
 const ShopCatalogueResult = async ({ searchParams , page, order}) => {
-    const {price, category, color, material} = await searchParams;
+    const resolvedParams = await searchParams;
+    const {price, category, color, material} = resolvedParams;
     const { products, total, resultPageQuantity, isPage} = await getShopProducts({ page , price, category, color, material, order});
     const from = page > Math.ceil(total / resultPageQuantity) && isPage ? 0 : page > Math.ceil(total / resultPageQuantity) ? 1 : (page - 1) * resultPageQuantity;
     const end = page > Math.ceil(total / resultPageQuantity) ? 9 :(page * resultPageQuantity);
