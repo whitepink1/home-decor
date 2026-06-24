@@ -1,24 +1,31 @@
 "use client"
 
 import { useRouter, useSearchParams } from "next/navigation";
+import { useCallback, useMemo } from "react";
 
 function useSearchFilterParams(searchTag) {
     const searchParams = useSearchParams();
     const router = useRouter();
 
-    const resultRaw = searchParams.get(searchTag);
-    const result = resultRaw ? resultRaw?.split(",") : [];
-    const newParams = new URLSearchParams(searchParams.toString());
-    const currentValues = result;
+    const result = useMemo(() => {
+        const resultRaw = searchParams.get(searchTag);
+        return resultRaw ? resultRaw?.split(",") : [];
+    }, [searchParams, searchTag]);
 
-    function updateErrorRoute() {
+    const getNewParams = () => new URLSearchParams(searchParams.toString());
+
+    const updateErrorRoute = useCallback(() => {
+        const newParams = getNewParams();
         newParams.delete(searchTag);
         router.replace(`/shop?${newParams.toString()}`, { scroll: false });
         router.refresh();
         return;
-    }
+    }, [searchParams, searchTag, router]);
 
-    function updateRoute(item, totalPages ) {
+    const updateRoute = useCallback((item, totalPages ) => {
+        const newParams = getNewParams();
+        const resultRaw = searchParams.get(searchTag);
+        const currentValues = resultRaw ? resultRaw.split(",") : [];
         let updatedValues;
 
         if(searchTag === 'order') {
@@ -66,7 +73,7 @@ function useSearchFilterParams(searchTag) {
         }
 
         router.replace(`/shop?${newParams.toString()}`, { scroll: false });
-    } 
+    }, [searchParams, searchTag, router]);
 
     return { updateRoute, updateErrorRoute, result};
 }

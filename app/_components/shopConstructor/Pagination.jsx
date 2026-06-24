@@ -10,7 +10,7 @@ const Pagination = ({page, total, resultPageQuantity, isPage, productsLength}) =
         if (page > totalPages && totalPages > 0) {
           updateRoute(1, totalPages);
         }
-    }, [page, totalPages, updateRoute]);
+    }, [page, totalPages]);
     const getPageNumbers = () => {
         const visiblePages = 3;
         let start = Math.max(1, page - 1);

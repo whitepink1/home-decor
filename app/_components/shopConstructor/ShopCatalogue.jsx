@@ -10,6 +10,8 @@ const ShopCatalogue = () => {
     const { updateRoute, updateErrorRoute, result } = useSearchFilterParams("price");
     const [rangeValues, setRangeValues] = useState({min: 0, max: 1500});
 
+    const stringResult = result.join(',');
+
     useEffect(() => {
         if(result && result[0]?.includes('_')){
             const [checkMin, checkMax] = [Number(result[0].split("_")[0]), Number(result[0].split("_")[1])];
@@ -23,7 +25,8 @@ const ShopCatalogue = () => {
                 updateErrorRoute();
             }
         }
-    }, [result])    
+    }, [updateErrorRoute, stringResult]);
+       
     const handleRangePrice = (value) => {
         setRangeValues(value);
     }

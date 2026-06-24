@@ -4,13 +4,13 @@ import useSearchFilterParams from "./searchFilterParams";
 
 const OrderFilter = ({order, end, from, total, productsLength}) => {
     const { updateRoute } = useSearchFilterParams('order');
-    console.log(!['name', 'price', 'created_at'].includes(order))
+
     useEffect(() => {
         if (!['name', 'price', 'created_at'].includes(order)) {
             console.log(order);
             updateRoute('name');
         }
-    }, [order, updateRoute]);
+    }, [order]);
     if (!productsLength) return null;
     return(<div className="h-[40px] flex justify-between items-center mb-[20px]">
         <p className="text-basic-600/60">Showing {from ? from : 1} - {end > total ? total : end} of {total} result</p>
@@ -22,4 +22,4 @@ const OrderFilter = ({order, end, from, total, productsLength}) => {
     </div>)
 }
 
-export default OrderFilter
+export default OrderFilter;
