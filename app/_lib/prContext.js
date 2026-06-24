@@ -1,8 +1,6 @@
 "use client";
 import { createContext, useEffect, useState } from "react";
 
-// typeof window !== "undefined" && localStorage.removeItem("favourite");
-
 export const ProductsContext = createContext();
 
 export const ProductsProvider = ({children}) => {
