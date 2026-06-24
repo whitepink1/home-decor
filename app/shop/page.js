@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Strengths from "../_components/shared/Strengths";
 import ShopCatalogue from "../_components/shopConstructor/ShopCatalogue";
 import ShopCatalogueResult from "../_components/shopConstructor/ShopCatalogueResult";
@@ -14,7 +15,9 @@ export const metadata = {
             <h1 className="text-[50px] font-bold text-basic-50">Shop</h1>
         </div>
         <div className="flex justify-center gap-[20px] mt-[60px] min-[1200px]:gap-[50px]">
-          <ShopCatalogue />
+          <Suspense fallback={<div className="text-center py-10">Loading filters...</div>}>
+            <ShopCatalogue />
+          </Suspense>
           <ShopCatalogueResult searchParams={ searchParams } page={page} order={order}/>
         </div>
         <Strengths />
