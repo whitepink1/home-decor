@@ -16,6 +16,7 @@ export default function Home() {
         <Image  
             src="/main1.jpg"
             alt="Background Homepage"
+            loading="lazy"
             fill
             className="z-5 object-cover object-center"
             />
